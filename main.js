@@ -1,7 +1,6 @@
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
 gravityNum = 0.3;
-
 canvas.width = 1024;
 canvas.height = 576;
 
@@ -42,8 +41,8 @@ class Player {
 }
 
 const player = new Player({
-    x: 0,
-    y: 0,
+    x: 100,
+    y: 100,
 });
 
 const keys = {
