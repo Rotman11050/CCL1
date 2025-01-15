@@ -32,9 +32,11 @@ function setupGame() {
     global.bottomMoveTrigger = new MoveTriggerVertically(0, 450, 1000, 20, -100); // Bottom trigger (moves background up/down)
     new Apple(350,350,50,50)
     new Floor(0, 400, 9000, 40);
-    new BlockObject(400, 280, 150, 50);
-    new BlockObject(600, 180, 150, 50);
-    new BlockObject(800, 80, 150, 50);
+    new BlockObject(1,1,1,8000);
+    new BlockObject(1400,1,1,8000);
+    new BlockObject(400, 280, 100, 20);
+    new BlockObject(600, 180, 100, 20);
+    new BlockObject(800, 80, 100, 20);
     //new BlockObject(300, 400, 50, 50);
     // setup your game here - means: Create instances of the GameObjects that belong to your game.
     // e.g.: 

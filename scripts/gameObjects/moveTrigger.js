@@ -20,7 +20,6 @@ class MoveTriggerHorizontaly extends BaseGameObject {
          if (global.playerObject.x < rightSide && global.playerObject.x > leftSide) 
             {
             if (collidingObject.name == "Skeleton") {
-                console.log("collision");
                 let shiftBy = collidingObject.xVelocity * global.deltaTime;
                 global.backgroundShiftX += shiftBy * -1;
     
