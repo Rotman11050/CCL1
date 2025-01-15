@@ -18,7 +18,7 @@ function move(event) {
             global.playerObject.yVelocity = 0;
             break;
         case "w":
-            global.playerObject.setJumpForce(0.8);
+            global.playerObject.setJumpForce(7);
             break;
        /* case "s":
             global.playerObject.xVelocity = 0;

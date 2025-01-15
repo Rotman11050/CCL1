@@ -3,6 +3,7 @@ import { Skeleton } from "../gameObjects/skeleton.js";
 import { MoveTriggerHorizontaly, MoveTriggerVertically } from "../gameObjects/moveTrigger.js";
 import { BlockObject } from "../gameObjects/blockObject.js";
 import { Floor } from "../gameObjects/floor.js";
+import { Apple } from "../gameObjects/collectables.js";
 
 function gameLoop(totalRunningTime) { 
     global.deltaTime = totalRunningTime - global.prevTotalRunningTime; // Time in milliseconds between frames
@@ -28,7 +29,8 @@ function setupGame() {
     global.leftMoveTrigger = new MoveTriggerHorizontaly(0, 0,20, 1000, 100);
     global.rightMoveTrigger = new MoveTriggerHorizontaly(900, 0, 20, 1000, -100);
     global.topMoveTrigger = new MoveTriggerVertically(0, 0, 1000, 20, 100);   // Top trigger (moves background up/down)
-global.bottomMoveTrigger = new MoveTriggerVertically(0, 450, 1000, 20, -100); // Bottom trigger (moves background up/down)
+    global.bottomMoveTrigger = new MoveTriggerVertically(0, 450, 1000, 20, -100); // Bottom trigger (moves background up/down)
+    new Apple(350,350,50,50)
     new Floor(0, 400, 9000, 40);
     new BlockObject(400, 280, 150, 50);
     new BlockObject(600, 180, 150, 50);

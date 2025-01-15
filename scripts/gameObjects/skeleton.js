@@ -5,6 +5,7 @@ class Skeleton extends BaseGameObject {
     name = "Skeleton";
     xVelocity = 0;
     yVelocity = 0;
+    moveWithPlayer = false;
     useGravityForces = true;
 
     getBoxBounds = function () {

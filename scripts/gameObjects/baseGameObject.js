@@ -11,6 +11,7 @@ class BaseGameObject {
     height = 50;
     useGravityForces = false;
     blockGravityForces = false;
+    moveWithPlayer = true;
     prevFallingVelocity = 0;
     index = -1;
 
@@ -72,8 +73,7 @@ class BaseGameObject {
                 this.physicsData.jumpForce = 0;
             }
         }
-
-  
+ 
         if (this.physicsData.fallVelocity > this.physicsData.terminalVelocity * global.pixelToMeter) {
             this.physicsData.fallVelocity = this.physicsData.terminalVelocity  * global.pixelToMeter;
         }
@@ -88,19 +88,20 @@ class BaseGameObject {
                 if (collisionHappened) {
                         if (this.physicsData.fallVelocity > 0) {
                             this.physicsData.isGrounded = true;
-                            this.y = otherObject.getBoxBounds().top - this.height - (this.getBoxBounds().bottom - (this.y + this.height)) - 0.1;
+                            this.y = otherObject.getBoxBounds().top - this.height - (this.getBoxBounds().bottom - (this.y + this.height)) - (global.deltaTime * 0.1);
                         }
                         else if (this.physicsData.fallVelocity < 0) {
-                            this.y = otherObject.getBoxBounds().bottom  + 0.1;
-                            this.reactToCollision(otherObject);
-                            otherObject.reactToCollision(this);
+                            this.y = otherObject.getBoxBounds().bottom - (this.getBoxBounds().top - this.y) - (global.deltaTime * 0.1);
                         }
                         this.physicsData.jumpForce = 0;
                         this.physicsData.fallVelocity = 0;
+                        this.physicsData.prevFallingVelocity = 0;
+                        this.physicsData.jumpForceStart = 0;
                 }
             }   
         }    
     };
+
 
     setJumpForce = function (jumpForce) {
         if (this.physicsData.isGrounded == true) 

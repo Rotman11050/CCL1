@@ -13,25 +13,32 @@ class MoveTriggerHorizontaly extends BaseGameObject {
        global.ctx.fillRect(this.x, this.y, this.width, this.height);
     }
 
-    reactToCollision = function (collidingObject)   {
-        if (collidingObject.name == "Skeleton") {
-            console.log("collision");
-            let shiftBy = collidingObject.xVelocity * global.deltaTime;
-            global.backgroundShiftX += shiftBy * -1;
-
-            if (global.backgroundShiftX < global.backgroundMaxShiftX) {
-                global.backgroundShiftX = global.backgroundMaxShiftX;
-                collidingObject.x = collidingObject.previousX;
-            }
-            else if (global.backgroundShiftX > 0) {
-                global.backgroundShiftX = 0;
-                collidingObject.x = collidingObject.previousX;
-            }
-            else {
-                global.leftMoveTrigger.x += shiftBy;
-                global.rightMoveTrigger.x += shiftBy;
+    reactToCollision = function (collidingObject){
+        let rightSide = 1400;
+        let leftSide = 0;
+        
+         if (global.playerObject.x < rightSide && global.playerObject.x > leftSide) 
+            {
+            if (collidingObject.name == "Skeleton") {
+                console.log("collision");
+                let shiftBy = collidingObject.xVelocity * global.deltaTime;
+                global.backgroundShiftX += shiftBy * -1;
+    
+                if (global.backgroundShiftX < global.backgroundMaxShiftX) {
+                    global.backgroundShiftX = global.backgroundMaxShiftX;
+                    collidingObject.x = collidingObject.previousX;
+                }
+                else if (global.backgroundShiftX > 0) {
+                    global.backgroundShiftX = 0;
+                    collidingObject.x = collidingObject.previousX;
+                }
+                else {
+                    global.leftMoveTrigger.x += shiftBy;
+                    global.rightMoveTrigger.x += shiftBy;
+                }
             }
         }
+        else console.log("Print");
 
     }
 
@@ -54,7 +61,7 @@ class MoveTriggerVertically extends BaseGameObject {
 
     draw = function () {
         // Draw a rectangle representing the vertical trigger area
-        global.ctx.fillRect(this.x, this.y, this.width, this.height);
+        // global.ctx.fillRect(this.x, this.y, this.width, this.height);
     }
 
     reactToCollision = function (collidingObject) {
