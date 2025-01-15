@@ -1,6 +1,6 @@
 #gameContainer {
     position: relative;
-    width: 1000px; /* change according to your game */
+    width: 1500px; /* change according to your game */
     height: 500px; /* change according to your game */
 }
 
@@ -15,7 +15,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 1000px; 
+    width: 1500px; 
     height: 500px;
     background-image: url("../images/background.jpg");
     background-size: cover;

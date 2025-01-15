@@ -40,6 +40,4 @@ function stop(event) {
 }
 
 document.addEventListener("keypress", move);
-
-//if you just want to move as long as the player presses a key:
 document.addEventListener("keyup", stop);

@@ -47,7 +47,7 @@ class BaseGameObject {
         }
         return bounds;
     };
-
+    
     update = function () { 
 
     };
@@ -202,7 +202,6 @@ class BaseGameObject {
     }
 
     reactToCollision = function(collidingObject) {
-
     }
 
     constructor(x, y, width, height) {

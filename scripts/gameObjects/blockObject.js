@@ -4,12 +4,22 @@ import { global } from "../modules/global.js";
 
 class BlockObject extends BaseGameObject {
     blockGravityForces = true;
+    name = "BlockObject"
 
     reactToCollision = function (collidingObject)   {
         if (collidingObject.name == "Skeleton") {
             collidingObject.x = collidingObject.previousX;
             collidingObject.y = collidingObject.previousY;
+            console.log("player collided")
         }
+        
+    }
+    reactToCollision = function (collidingObject)   {
+        if (collidingObject.name == "MoveTriggerH") {
+            collidingObject.x = collidingObject.previousX;
+            collidingObject.y = collidingObject.previousY;
+        }
+        
     }
 
     constructor (x, y, width, height) {

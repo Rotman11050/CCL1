@@ -7,10 +7,10 @@ global.deltaTime = 0;
 global.allGameObjects = [];
 global.playerObject = {};
 global.backgroundShiftX = 0;
-global.backgroundShiftY = 0;
+// global.backgroundShiftY = 0;
 global.counter = 0;
 global.backgroundMaxShiftX = -2000;
-global.backgroundMaxShiftY = -1000;
+// global.backgroundMaxShiftY = -1000;
 global.gravityForce = 9.8;
 global.pixelToMeter = 100;
 global.leftMoveTrigger;
@@ -28,7 +28,7 @@ global.getCanvasBounds = function () {
 }
 
 global.checkCollisionWithAnyOther = function (givenObject) {
-    for (let i = 0; i < global.allGameObjects.length; i++) {
+    for (let i = givenObject.index; i < global.allGameObjects.length; i++) {
         let otherObject = global.allGameObjects[i];
         if (otherObject.active == true) {
             let collisionHappened = this.detectBoxCollision(givenObject, otherObject);
@@ -36,6 +36,7 @@ global.checkCollisionWithAnyOther = function (givenObject) {
                 givenObject.reactToCollision(otherObject);
                 otherObject.reactToCollision(givenObject);
             }
+
         }
     }
 }
