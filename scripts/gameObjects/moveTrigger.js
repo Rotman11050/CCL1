@@ -61,7 +61,7 @@ class MoveTriggerVertically extends BaseGameObject {
         if (collidingObject.name == "Skeleton") {
             console.log(collidingObject.physicsData.fallVelocity);
             // Somewhere the velocity of the player needs to be inverted
-            let shiftBy = collidingObject.physicsData.fallVelocity * -1 * global.deltaTime;
+            let shiftBy = collidingObject.physicsData.fallVelocity * 1 * global.deltaTime;
             global.backgroundShiftY += shiftBy;
 
             // Prevent background from shifting beyond certain limits
@@ -73,11 +73,12 @@ class MoveTriggerVertically extends BaseGameObject {
                 collidingObject.y = collidingObject.previousY;
             } else {
                 // Adjust the position of vertical move triggers
-                global.topMoveTrigger.y += shiftBy;
+                global.topMoveTrigger.y += shiftBy*-1;
                 global.bottomMoveTrigger.y += shiftBy;
             }
         }
     }
+
 
     constructor(x, y, width, height) {
         super(x, y, width, height);
