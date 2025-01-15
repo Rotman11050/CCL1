@@ -59,15 +59,15 @@ class MoveTriggerVertically extends BaseGameObject {
     }
 
     draw = function () {
-        // Draw a rectangle representing the vertical trigger area
-        // global.ctx.fillRect(this.x, this.y, this.width, this.height);
+        global.ctx.fillRect(this.x, this.y, this.width, this.height);
     }
 
     reactToCollision = function (collidingObject) {
         if (collidingObject.name == "Skeleton") {
-            console.log(collidingObject.physicsData.fallVelocity);
+            // console.log(collidingObject.physicsData.fallVelocity);
             // Somewhere the velocity of the player needs to be inverted
-            let shiftBy = collidingObject.physicsData.fallVelocity * 1 * global.deltaTime;
+            let shiftBy = collidingObject.physicsData.fallVelocity * -1 * global.deltaTime;
+            console.log(collidingObject.physicsData.prevFallingVelocity)
             global.backgroundShiftY += shiftBy;
 
             // Prevent background from shifting beyond certain limits

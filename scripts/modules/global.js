@@ -28,7 +28,7 @@ global.getCanvasBounds = function () {
 }
 
 global.checkCollisionWithAnyOther = function (givenObject) {
-    for (let i = givenObject.index; i < global.allGameObjects.length; i++) {
+    for (let i = 0; i < global.allGameObjects.length; i++) {
         let otherObject = global.allGameObjects[i];
         if (otherObject.active == true) {
             let collisionHappened = this.detectBoxCollision(givenObject, otherObject);

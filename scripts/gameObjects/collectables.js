@@ -3,7 +3,7 @@ import { global } from "../modules/global.js";
 
 class Apple extends BaseGameObject{
     name = "Apple";
-
+    
     getBoxBounds= function () {
         let bounds = {
             left: this.x + 25,
@@ -14,14 +14,13 @@ class Apple extends BaseGameObject{
             return bounds;
     };
 
-    reactToCollision = function(collidingObject)
-    {
-        switch(collidingObject){
-            case "Skeleton":
-                this.active  = false;
-                break;
-        }
-    }
+    // reactToCollision = function(collidingObject)
+    // {
+    //     if (collidingObject.name = "Skeleton") {
+    //         this.active = false;
+    //         console.log("500000000");
+    //     }
+    // }
 
     constructor(x, y, width, height) {
         super(x, y, width, height);
