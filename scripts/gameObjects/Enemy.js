@@ -78,16 +78,13 @@ class Enemy extends BaseGameObject {
     }
     
     reactToCollision = function (collidingObject){
-        if (collidingObject.name ==="Skeleton") {
-            global.playerObject.x = 300;
-            global.playerObject.y = 100;
-            global.leftMoveTrigger.x = 280;
-            global.rightMoveTrigger.x = 354;
+        if (collidingObject.name === "Skeleton") {
+            global.restartGame();
         }
     }
     constructor(x, y, width, height, name) {
         super (x, y, width, height, name);
-        let images = ["./images/Tornado.jpg", "./images/Tornado.jpg"];
+        let images = ["./images/Tornado.jpg", "./images/wildTornado.jpg"];
         this.loadImages(images);
     }
 }

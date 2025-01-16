@@ -39,6 +39,23 @@ global.checkCollisionWithAnyOther = function (givenObject) {
     }
 }
 
+global.restartGame = function(){
+
+    global.allGameObjects.forEach(gameObject => {
+        if (gameObject.moveWithPlayer === true) {
+            gameObject.x = gameObject.startingX;
+            gameObject.y = gameObject.startingY
+            if(gameObject.name === "Enemy")
+                {
+                    gameObject.active = true;
+                }
+        }
+    });
+    global.playerObject.y = global.playerObject.startingY;
+    
+}
+
+
 
 global.detectBoxCollision = function (gameObject1, gameObject2) {
     let box1 = gameObject1.getBoxBounds();
@@ -54,6 +71,8 @@ global.detectBoxCollision = function (gameObject1, gameObject2) {
     }
     return false;
 }
+
+
 
 
 export { global }

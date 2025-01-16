@@ -4,8 +4,8 @@ import { MoveTrigger} from "../gameObjects/moveTrigger.js";
 import { BlockObject } from "../gameObjects/blockObject.js";
 import { Floor } from "../gameObjects/floor.js";
 import { Apple } from "../gameObjects/collectables.js";
-import { Enemy } from "../gameObjects/spiders.js";
-// import { Enemy } from "../gameObjects/spiders.js";
+import { Enemy } from "../gameObjects/Enemy.js";
+
 
 function gameLoop(totalRunningTime) { 
     global.deltaTime = totalRunningTime - global.prevTotalRunningTime; // Time in milliseconds between frames
@@ -38,8 +38,8 @@ function setupGame() {
     new BlockObject(400, 280, 100, 20);
     new BlockObject(600, 180, 100, 20);
     new BlockObject(800, 80, 100, 20);
-    new Enemy(300,100,80,80)
-    global.playerObject = new Skeleton(300, 100, 64, 64);
+    new Enemy(1000,500,80,80)
+    global.playerObject = new Skeleton(300, 400, 64, 64);
     //new BlockObject(300, 400, 50, 50);
     // setup your game here - means: Create instances of the GameObjects that belong to your game.
     // e.g.: 

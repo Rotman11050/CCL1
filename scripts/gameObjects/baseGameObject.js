@@ -7,6 +7,8 @@ class BaseGameObject {
     y = 500;
     previousX = 0;
     previousY = 0;
+    startingX 
+    startingY;
     width = 50;
     height = 50;
     useGravityForces = false;
@@ -14,6 +16,7 @@ class BaseGameObject {
     moveWithPlayer = true;
     prevFallingVelocity = 0;
     index = -1;
+    moveWithPlayer = true;
 
     physicsData = {
         "fallVelocity": 0,
@@ -211,6 +214,8 @@ class BaseGameObject {
         this.height = height;
         this.previousX = x;
         this.previousY = y;
+        this.startingX = x;
+        this.startingY = y;
         global.allGameObjects.push(this);
         this.index = global.allGameObjects.length - 1;
     }
