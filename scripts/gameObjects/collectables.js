@@ -9,10 +9,10 @@ class Apple extends BaseGameObject{
     {
         if (collidingObject.name == "Skeleton") {
             this.active = false;
-            console.log("colided");
         }
       
     }
+
 
     constructor(x, y, width, height) {
         super(x, y, width, height);

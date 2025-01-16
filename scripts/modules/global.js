@@ -11,6 +11,7 @@ global.counter = 0;
 global.backgroundMaxShiftX = -2000;
 global.gravityForce = 9.8;
 global.pixelToMeter = 100;
+global.wasCalled = false;
 global.leftMoveTrigger;
 global.rightMoveTrigger;
 
@@ -39,8 +40,8 @@ global.checkCollisionWithAnyOther = function (givenObject) {
     }
 }
 
-global.restartGame = function(){
-
+global.restartGame = function(){;
+    this.wasCalled = true;
     global.allGameObjects.forEach(gameObject => {
         if (gameObject.moveWithPlayer === true) {
             gameObject.x = gameObject.startingX;
@@ -52,9 +53,7 @@ global.restartGame = function(){
         }
     });
     global.playerObject.y = global.playerObject.startingY;
-    
 }
-
 
 
 global.detectBoxCollision = function (gameObject1, gameObject2) {

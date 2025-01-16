@@ -4,6 +4,7 @@ import { BaseGameObject } from "./baseGameObject.js";
 class Enemy extends BaseGameObject {
     xVelocity = 0;
     yVelocity = -200;
+    wasCalledCounter = 0;
 
     randomMovementData = {
        "timeToChangeDirection": 6,
@@ -78,8 +79,15 @@ class Enemy extends BaseGameObject {
     }
     
     reactToCollision = function (collidingObject){
+        
         if (collidingObject.name === "Skeleton") {
             global.restartGame();
+            if (global.wasCalled == true) {
+                this.wasCalledCounter++;
+                if (this.wasCalledCounter == 3) {
+                    alert("YOU DIED, RESTART THE GAME");
+                }
+            }
         }
     }
     constructor(x, y, width, height, name) {
