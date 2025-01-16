@@ -1,6 +1,9 @@
 import { global } from "../modules/global.js";
 import { BaseGameObject } from "./baseGameObject.js";
 
+
+let livesCounter = 3;
+
 class Enemy extends BaseGameObject {
     xVelocity = 0;
     yVelocity = -200;
@@ -78,18 +81,40 @@ class Enemy extends BaseGameObject {
         }
     }
     
-    reactToCollision = function (collidingObject){
+
+    // reactToCollision = function (collidingObject){
         
+    //     if (collidingObject.name === "Skeleton") {
+    //         global.restartGame();
+    //         if (global.wasCalled == true) {
+    //             this.wasCalledCounter++;
+    //             document.getElementById('healthDisplay').innerHTML = livesCounter;
+    //             livesCounter--;
+    //                 if (this.wasCalledCounter == 3) {
+    //                     alert("YOU DIED, RESTART THE GAME");
+    //                 }
+    //         }
+    //     }
+    // }
+
+    reactToCollision = function (collidingObject) {
         if (collidingObject.name === "Skeleton") {
             global.restartGame();
+            
             if (global.wasCalled == true) {
                 this.wasCalledCounter++;
-                if (this.wasCalledCounter == 3) {
+                livesCounter--; 
+                document.getElementById('healthDisplay').innerHTML = `Health: ${livesCounter}`; 
+                if (livesCounter <= 0) {
                     alert("YOU DIED, RESTART THE GAME");
+                    // livesCounter = 3; 
+                    // document.getElementById('healthDisplay').innerHTML = `Health: ${livesCounter}`;
+                    // this.wasCalledCounter = 0;
                 }
             }
         }
-    }
+    };
+
     constructor(x, y, width, height, name) {
         super (x, y, width, height, name);
         let images = ["./images/Tornado.jpg", "./images/wildTornado.jpg"];
