@@ -7,7 +7,6 @@ class Apple extends BaseGameObject{
 
     reactToCollision = function(collidingObject)
     {
-        // console.log("chicken sause")
         if (collidingObject.name == "Skeleton") {
             this.active = false;
             console.log("colided");

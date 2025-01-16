@@ -14,13 +14,6 @@ class BlockObject extends BaseGameObject {
         }
         
     }
-    reactToCollision = function (collidingObject)   {
-        if (collidingObject.name == "MoveTriggerH") {
-            collidingObject.x = collidingObject.previousX;
-            collidingObject.y = collidingObject.previousY;
-        }
-        
-    }
 
     constructor (x, y, width, height) {
         super(x, y, width, height);

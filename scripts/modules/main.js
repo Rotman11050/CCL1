@@ -1,9 +1,10 @@
 import { global } from "./global.js";
 import { Skeleton } from "../gameObjects/skeleton.js";
-import { MoveTriggerHorizontaly} from "../gameObjects/moveTrigger.js";
+import { MoveTrigger} from "../gameObjects/moveTrigger.js";
 import { BlockObject } from "../gameObjects/blockObject.js";
 import { Floor } from "../gameObjects/floor.js";
 import { Apple } from "../gameObjects/collectables.js";
+import { Enemy } from "../gameObjects/spiders.js";
 // import { Enemy } from "../gameObjects/spiders.js";
 
 function gameLoop(totalRunningTime) { 
@@ -26,18 +27,18 @@ function gameLoop(totalRunningTime) {
 }
 
 function setupGame() {
-    global.leftMoveTrigger = new MoveTriggerHorizontaly(280, 0,20, 1000, 100);
-    global.rightMoveTrigger = new MoveTriggerHorizontaly(354, 0, 20, 1000, -100);
+    global.leftMoveTrigger = new MoveTrigger(280, 0,20, 1000, 100);
+    global.rightMoveTrigger = new MoveTrigger(354, 0, 20, 1000, -100);
     // global.topMoveTrigger = new MoveTriggerVertically(0, 0, 1000, 20, 100);   // Top trigger (moves background up/down)
     // global.bottomMoveTrigger = new MoveTriggerVertically(0, 450, 1000, 20, -100); // Bottom trigger (moves background up/down)
     new Apple(350,350,50,50)
     // new Enemy(450, 280, 50, 50)
     // new Enemy(450, 280, 100, 70)
     new Floor(0, 400, 9000, 40);
-    new BlockObject(1,1,1,8000);
     new BlockObject(400, 280, 100, 20);
     new BlockObject(600, 180, 100, 20);
     new BlockObject(800, 80, 100, 20);
+    new Enemy(300,100,80,80)
     global.playerObject = new Skeleton(300, 100, 64, 64);
     //new BlockObject(300, 400, 50, 50);
     // setup your game here - means: Create instances of the GameObjects that belong to your game.

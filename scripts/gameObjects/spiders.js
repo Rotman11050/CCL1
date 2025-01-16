@@ -76,23 +76,15 @@ class Enemy extends BaseGameObject {
             this.y = canvasBounds.top - this.height;
         }
     }
-
-    reactToCollision = function (collidingObject) {
-        if (collidingObject.name === "Wall") {
-            this.x = this.previousX - 0.01 * this.xVelocity;
-            this.y = this.previousY - 0.01 * this.yVelocity;
-            const originalProbability = this.randomMovementData.movementChangeOppositePossibility;
-            this.randomMovementData.movementChangeOppositePossibility = 0;
-            this.changeMovement();
-            this.randomMovementData.movementChangeOppositePossibility = originalProbability;
+    
+    reactToCollision = function (collidingObject){
+        if (collidingObject.name ==="Skeleton") {
+            global.playerObject.x = 300;
+            global.playerObject.y = 100;
+            global.leftMoveTrigger.x = 280;
+            global.rightMoveTrigger.x = 354;
         }
     }
-    // reactToCollision = function (collidingObject){
-    //     if (collidingObject.name ==="Skeleton") {
-            
-    //     }
-    // }
-
     constructor(x, y, width, height, name) {
         super (x, y, width, height, name);
         let images = ["./images/Tornado.jpg", "./images/Tornado.jpg"];

@@ -1,54 +1,53 @@
 import { BaseGameObject } from "./baseGameObject.js";
 import { global } from "../modules/global.js";
 
-class MoveTriggerHorizontaly extends BaseGameObject {
+class MoveTrigger extends BaseGameObject {
     backGroundDiv = null;
-    name ="MoveTriggerH"
+    moveWithPlayer = false;
+    counter = 0;
     update = function () {
-        this.backGroundDiv.style.backgroundPositionX = global.backgroundShiftX + "px";
-        global.canvas.style.marginLeft =  global.backgroundShiftX  + "px";
+        this.backGroundDiv.style.backgroundPositionX = global.backgroundShift + "px";
+        global.canvas.style.marginLeft =  global.backgroundShift  + "px";
     }
 
     draw = function () {
        global.ctx.fillRect(this.x, this.y, this.width, this.height);
     }
-
-    reactToCollision = function (collidingObject){
-        let rightSide = 1400;
-        let leftSide = 0;
+    reactToCollision = function (collidingObject)   {
+        if (collidingObject.name == "Skeleton") {
+            collidingObject.x = collidingObject.previousX;
         
-         if (global.playerObject.x < rightSide && global.playerObject.x > leftSide) 
-            {
-            if (collidingObject.name == "Skeleton") 
+            global.allGameObjects.forEach(gameObject => {
+                if(gameObject.moveWithPlayer === true)
                 {
-                    let shiftBy = collidingObject.xVelocity * global.deltaTime;
-                    global.backgroundShiftX += shiftBy * -1;
-        
-                    if (global.backgroundShiftX < global.backgroundMaxShiftX) {
-                        global.backgroundShiftX = global.backgroundMaxShiftX;
-                        collidingObject.x = collidingObject.previousX;
+                    if(collidingObject.xVelocity > 0  && global.counter < 10000)
+                    {
+                        global.counterRight = 0;
+                        global.counter++;
+    
                     }
-                    else if (global.backgroundShiftX > 0) {
-                        global.backgroundShiftX = 0;
-                        collidingObject.x = collidingObject.previousX;
+                    else if(collidingObject.xVelocity < 0 && global.counter >= -500)
+                    {
+                        global.counter--;
                     }
-                    else{
-                        global.leftMoveTrigger.x += shiftBy;
-                        global.rightMoveTrigger.x += shiftBy;
+
+                    console.log(global.counter);
+                    if(global.counter>= -500 && global.counter < 10000)
+                    {
+                        gameObject.x -= collidingObject.xVelocity * global.deltaTime;
+
                     }
-                    
+
                 }
+            });
+        }
     }
 
-}
-        
-    constructor(x, y, width, height){
+    constructor(x, y, width, height) {
         super(x, y, width, height);
         //this.loadImages(["./images/apple.png"]);
         this.backGroundDiv = document.querySelector("#background");
     }
 }
 
-
- export {MoveTriggerHorizontaly}
-// export {MoveTriggerVertically}
+export {MoveTrigger}
