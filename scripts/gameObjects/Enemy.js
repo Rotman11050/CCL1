@@ -7,7 +7,6 @@ let livesCounter = 3;
 class Enemy extends BaseGameObject {
     xVelocity = 0;
     yVelocity = -200;
-    wasCalledCounter = 0;
 
     randomMovementData = {
        "timeToChangeDirection": 6,
@@ -82,34 +81,14 @@ class Enemy extends BaseGameObject {
     }
     
 
-    // reactToCollision = function (collidingObject){
-        
-    //     if (collidingObject.name === "Skeleton") {
-    //         global.restartGame();
-    //         if (global.wasCalled == true) {
-    //             this.wasCalledCounter++;
-    //             document.getElementById('healthDisplay').innerHTML = livesCounter;
-    //             livesCounter--;
-    //                 if (this.wasCalledCounter == 3) {
-    //                     alert("YOU DIED, RESTART THE GAME");
-    //                 }
-    //         }
-    //     }
-    // }
-
     reactToCollision = function (collidingObject) {
         if (collidingObject.name === "Skeleton") {
             global.restartGame();
-            
             if (global.wasCalled == true) {
-                this.wasCalledCounter++;
                 livesCounter--; 
                 document.getElementById('healthDisplay').innerHTML = `Health: ${livesCounter}`; 
                 if (livesCounter <= 0) {
                     alert("YOU DIED, RESTART THE GAME");
-                    // livesCounter = 3; 
-                    // document.getElementById('healthDisplay').innerHTML = `Health: ${livesCounter}`;
-                    // this.wasCalledCounter = 0;
                 }
             }
         }
