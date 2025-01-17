@@ -2,16 +2,16 @@ import { BaseGameObject } from "./baseGameObject.js";
 import { global } from "../modules/global.js";
 import { Apple } from "./collectables.js";
 
-let relicWasCollected = false;
+let relicIsCollected = false;
 
 class Relic extends BaseGameObject{
     name = "Relic";
     reactToCollision = function(collidingObject)
     {
-        if (collidingObject = "Skeleton") {
-            relicWasCollected = true;
+        if (collidingObject.name == "Skeleton") {
+            relicIsCollected = true;
             this.active = false;
-            if (relicWasCollected == true) {
+            if (relicIsCollected == true) {
                 document.getElementById('canvas').style.display = "none";
                 document.getElementById('background').style.display = "none";
                 document.getElementById('YouWin').style.display = "block";

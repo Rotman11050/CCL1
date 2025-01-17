@@ -28,8 +28,8 @@ function gameLoop(totalRunningTime) {
 }
 
 function setupGame() {
-    global.leftMoveTrigger = new MoveTrigger(280, 0,20, 1000, 100);
-    global.rightMoveTrigger = new MoveTrigger(354, 0, 20, 1000, -100);
+    global.leftMoveTrigger = new MoveTrigger(280, -100,20, 1000, 100);
+    global.rightMoveTrigger = new MoveTrigger(354, -100, 20, 1000, -100);
     // global.topMoveTrigger = new MoveTriggerVertically(0, 0, 1000, 20, 100);   // Top trigger (moves background up/down)
     // global.bottomMoveTrigger = new MoveTriggerVertically(0, 450, 1000, 20, -100); // Bottom trigger (moves background up/down)
     new Apple(350,350,50,50)
@@ -37,8 +37,8 @@ function setupGame() {
     new Apple(450,200,50,50)
     new Apple(650,100,50,50)
     new Apple(600,100,50,50)
-    // new Enemy(450, 280, 50, 50)
-    // new Enemy(450, 280, 100, 70)
+    new Enemy(450, 280, 50, 50)
+    new Enemy(450, 280, 100, 70)
     new Floor(0, 400, 9000, 40);
     new BlockObject(400, 280, 100, 20);
     new BlockObject(600, 180, 100, 20);
