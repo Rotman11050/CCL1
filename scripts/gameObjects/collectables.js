@@ -1,12 +1,13 @@
 import { BaseGameObject } from "./baseGameObject.js";
 import { global } from "../modules/global.js";
+import { Relic } from "./finalCollectable.js";
 
-let appleCounter = 5;
+    
+    let appleCounter = 5;
 
 class Apple extends BaseGameObject{
     name = "Apple";
     wasCalled = true;
-
     reactToCollision = function(collidingObject)
     {
         if (collidingObject.name == "Skeleton") {
@@ -15,6 +16,7 @@ class Apple extends BaseGameObject{
             document.getElementById('scoreDisplay').innerHTML = `There is ${appleCounter} fragments on map`; 
             if (appleCounter <= 0) {
                 document.getElementById('scoreDisplay').innerHTML = `Collect the Relic before time runs out!`; 
+                new Relic(200, 200,50,50);
             }
         }
       

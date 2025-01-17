@@ -5,6 +5,7 @@ import { BlockObject } from "../gameObjects/blockObject.js";
 import { Floor } from "../gameObjects/floor.js";
 import { Apple } from "../gameObjects/collectables.js";
 import { Enemy } from "../gameObjects/Enemy.js";
+import { Relic } from "../gameObjects/finalCollectable.js";
 
 
 function gameLoop(totalRunningTime) { 

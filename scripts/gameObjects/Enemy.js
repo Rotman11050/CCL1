@@ -83,6 +83,7 @@ class Enemy extends BaseGameObject {
 
     reactToCollision = function (collidingObject) {
         if (collidingObject.name === "Skeleton") {
+            collidingObject.physicsData.fallVelocity = 0;
             global.restartGame();
             if (global.wasCalled == true) {
                 livesCounter--; 
