@@ -20,7 +20,7 @@ class MoveTrigger extends BaseGameObject {
             global.allGameObjects.forEach(gameObject => {
                 if(gameObject.moveWithPlayer === true)
                 {
-                    if(collidingObject.xVelocity > 0  && global.counter < 10000)
+                    if(collidingObject.xVelocity > 0  && global.counter < 300000)
                     {
                         global.counterRight = 0;
                         global.counter++;
@@ -32,7 +32,7 @@ class MoveTrigger extends BaseGameObject {
                     }
 
                     console.log(global.counter);
-                    if(global.counter>= -500 && global.counter < 10000)
+                    if(global.counter>= -500 && global.counter < 300000)
                     {
                         gameObject.x -= collidingObject.xVelocity * global.deltaTime;
 

@@ -30,29 +30,55 @@ function gameLoop(totalRunningTime) {
 function setupGame() {
     global.leftMoveTrigger = new MoveTrigger(280, -100,20, 1000, 100);
     global.rightMoveTrigger = new MoveTrigger(354, -100, 20, 1000, -100);
-    // global.topMoveTrigger = new MoveTriggerVertically(0, 0, 1000, 20, 100);   // Top trigger (moves background up/down)
-    // global.bottomMoveTrigger = new MoveTriggerVertically(0, 450, 1000, 20, -100); // Bottom trigger (moves background up/down)
-    new Apple(350,350,50,50)
-    new Apple(400,200,50,50)
-    new Apple(450,200,50,50)
-    new Apple(650,100,50,50)
-    new Apple(600,100,50,50)
-    new Enemy(450, 280, 50, 50)
-    new Enemy(450, 280, 100, 70)
-    new Floor(0, 400, 9000, 40);
+  
+
+    new Apple(425,230,50,50)
+    new Apple(625,130,50,50)
+    new Apple(825, 30, 50, 50);
+    new Apple(1125, 30, 50, 50)
+    new Apple(1525,130,50,50)
+    new Apple(1725,30,50,50)
+    new Apple(1725,110,50, 50)
+    new Apple(2105,110,50, 50)
+    new Apple(2305,50,50,50)
+    new Apple(2605,50,50,50)
+    new Apple(3005, 110,50,50)
+    new Apple(3355,110,50,50)
+    new Apple(3525,30,50,50)
+    new Apple(3525,110,50,50)
+    new Apple(3825,150,50,50)
+
     new BlockObject(400, 280, 100, 20);
     new BlockObject(600, 180, 100, 20);
     new BlockObject(800, 80, 100, 20);
-    new Enemy(1000,500,80,80)
-    global.playerObject = new Skeleton(300, 400, 64, 64);
-    //new BlockObject(300, 400, 50, 50);
-    // setup your game here - means: Create instances of the GameObjects that belong to your game.
-    // e.g.: 
-    /*    
-                global.playerObject = new PacMan(200, 300, 60, 60);
-                new Wall(0, 0, 100, 100);
-                new Candy(100, 100, 100, 100);
-    }*/
+    new BlockObject(1100, 80, 100, 20)
+    new BlockObject(1500, 180, 100, 20);
+    new BlockObject(1700, 80, 100, 20);
+    new BlockObject(1700, 160, 100, 20);
+    //Hazard floor
+    new BlockObject(2080, 160,100,20)
+    new BlockObject(2280, 100,100,20)
+    new BlockObject(2580, 100,100,20)
+    new BlockObject(2980, 160,100,20)
+    new BlockObject(3330, 160,100,20)
+    new BlockObject(3500, 80, 100, 20);
+    new BlockObject(3500, 160, 100, 20);
+    new BlockObject(3800, 200, 100, 20);
+
+
+
+
+    // new Enemy(1000,500,80,80)
+    // new Enemy(450, 280, 50, 50)
+    // new Enemy(450, 280, 100, 70)
+
+
+
+    new Floor(0, 400, 9000, 40);
+    global.playerObject = new Skeleton(300, 200, 64, 64);
+    
+
+
    console.log(global.allGameObjects)
 
 }

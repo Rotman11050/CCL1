@@ -3,7 +3,7 @@ import { global } from "../modules/global.js";
 import { Relic } from "./finalCollectable.js";
 
     
-    let appleCounter = 5;
+    let appleCounter = 15;
 
 class Apple extends BaseGameObject{
     name = "Apple";

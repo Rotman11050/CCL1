@@ -1,7 +1,7 @@
 #gameContainer {
     position: relative;
-    width: 1500px; /* change according to your game */
-    height: 500px; /* change according to your game */
+    width: 1500px; /* Increased width for the playing area */
+    height: 500px; /* Increased height for the playing area */
 }
 
 #canvas {
@@ -9,7 +9,6 @@
     left: 0;
     top: 0;
 }
-
 
 #background {
     position: absolute;
@@ -19,6 +18,4 @@
     height: 500px;
     background-image: url("../images/background.jpg");
     background-size: cover;
-
 }
-/* add styles for other HTML elements of your game */

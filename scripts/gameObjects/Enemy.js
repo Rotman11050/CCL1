@@ -87,6 +87,7 @@ class Enemy extends BaseGameObject {
             global.restartGame();
             if (global.wasCalled == true) {
                 livesCounter--; 
+                global.counter = 0;
                 document.getElementById('healthDisplay').innerHTML = `Health: ${livesCounter}`; 
                 if (livesCounter <= 0) {
                     alert("YOU DIED, RESTART THE GAME");
