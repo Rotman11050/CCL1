@@ -42,7 +42,7 @@ function setupGame() {
     new Apple(2105,110,50, 50)
     new Apple(2305,50,50,50)
     new Apple(2605,50,50,50)
-    new Apple(3005, 110,50,50)
+    new Apple(2995, 110,50,50)
     new Apple(3355,110,50,50)
     new Apple(3525,30,50,50)
     new Apple(3525,110,50,50)
@@ -59,7 +59,7 @@ function setupGame() {
     new BlockObject(2080, 160,100,20)
     new BlockObject(2280, 100,100,20)
     new BlockObject(2580, 100,100,20)
-    new BlockObject(2980, 160,100,20)
+    new BlockObject(2975, 160,100,20)
     new BlockObject(3330, 160,100,20)
     new BlockObject(3500, 80, 100, 20);
     new BlockObject(3500, 160, 100, 20);
@@ -68,9 +68,8 @@ function setupGame() {
 
 
 
-    // new Enemy(1000,500,80,80)
-    // new Enemy(450, 280, 50, 50)
-    // new Enemy(450, 280, 100, 70)
+    new Enemy(1000,500,80,80)
+    new Enemy(450, 280, 100, 70)
 
 
 
