@@ -5,7 +5,7 @@ import { BlockObject } from "../gameObjects/blockObject.js";
 import { Floor } from "../gameObjects/floor.js";
 import { Apple } from "../gameObjects/collectables.js";
 import { Enemy } from "../gameObjects/Enemy.js";
-import { Relic } from "../gameObjects/finalCollectable.js";
+
 
 
 function gameLoop(totalRunningTime) { 
@@ -70,7 +70,7 @@ function setupGame() {
 
     new Enemy(1000,500,80,80)
     new Enemy(450, 280, 100, 70)
-
+    new Enemy(700, 300, 80,80)
 
 
     new Floor(0, 400, 9000, 40);
