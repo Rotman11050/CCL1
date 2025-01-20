@@ -45,7 +45,6 @@ class MoveTrigger extends BaseGameObject {
 
     constructor(x, y, width, height) {
         super(x, y, width, height);
-        //this.loadImages(["./images/apple.png"]);
         this.backGroundDiv = document.querySelector("#background");
     }
 }

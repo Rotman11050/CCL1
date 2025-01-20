@@ -21,7 +21,7 @@ class Relic extends BaseGameObject{
 
     constructor(x, y, width, height) {
         super(x, y, width, height);
-        this.loadImages(["./images/goldenMedalion.jpeg"]);
+        this.loadImages(["./images/Relic.png"]);
     }
 }
 

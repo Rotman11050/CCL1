@@ -24,27 +24,13 @@ class Skeleton extends BaseGameObject {
         if (this.xVelocity == 0) {
             global.playerObject.switchCurrentSprites(this.animationData.firstSpriteIndex, this.animationData.firstSpriteIndex);
         }
-    //     this.y -= this.physicsData.prevFallingVelocity;
-    //     global.allGameObjects.forEach(gameObject => {
-    //         if(gameObject.moveWithPlayer === true)
-    //         {
-    //         gameObject.y -= this.physicsData.prevFallingVelocity;
-
-    //         console.log(this.physicsData.prevFallingVelocity);
-    //     }
-    // });
+ 
     }
 
-    
-
-    // draw = function () {
-    //     global.ctx.fillStyle = "#000000";
-    //     global.ctx.fillRect(this.x, this.y, this.width, this.height);
-    // }
 
     constructor(x, y, width, height) {
         super(x, y, width, height);
-        this.loadImages(["./images/apple.png"]);
+        // this.loadImages(["./images/apple.png"]);
         this.loadImagesFromSpritesheet("./images/BODY_skeleton.png", 9, 4);
     }
 }

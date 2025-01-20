@@ -32,21 +32,22 @@ function setupGame() {
     global.rightMoveTrigger = new MoveTrigger(354, -100, 20, 1000, -100);
   
 
-    new Apple(425,230,50,50)
-    new Apple(625,130,50,50)
-    new Apple(825, 30, 50, 50);
-    new Apple(1125, 30, 50, 50)
-    new Apple(1525,130,50,50)
-    new Apple(1725,30,50,50)
-    new Apple(1725,110,50, 50)
-    new Apple(2105,110,50, 50)
-    new Apple(2305,50,50,50)
-    new Apple(2605,50,50,50)
-    new Apple(2995, 110,50,50)
-    new Apple(3355,110,50,50)
-    new Apple(3525,30,50,50)
-    new Apple(3525,110,50,50)
-    new Apple(3825,150,50,50)
+    new Apple(395,210,100,70)
+    new Apple(595,110,100,70)
+    new Apple(795, 10, 100,70);
+    new Apple(1095, 10, 100,70)
+    new Apple(1495,110,100,70)
+    new Apple(1695,10,100,70)
+    new Apple(1695,90,100,70)
+    new Apple(2075,90,100,70)
+    new Apple(2275,30,100,70)
+    new Apple(2565,30,100,70)
+    //
+    new Apple(2965, 90,100,70)
+    new Apple(3325,90,100,70)
+    new Apple(3485,10, 100,70)
+    new Apple(3495,90,100,70)
+    new Apple(3795,130,100,70)
 
     new BlockObject(400, 280, 100, 20);
     new BlockObject(600, 180, 100, 20);
@@ -68,9 +69,9 @@ function setupGame() {
 
 
 
-    new Enemy(1000,500,80,80)
-    new Enemy(450, 280, 100, 70)
-    new Enemy(700, 300, 80,80)
+    // new Enemy(1000,500,80,80)
+    // new Enemy(450, 280, 100, 70)
+    // new Enemy(700, 300, 80,80)
 
 
     new Floor(0, 400, 9000, 40);
