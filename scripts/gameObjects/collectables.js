@@ -16,7 +16,7 @@ class Apple extends BaseGameObject{
             document.getElementById('scoreDisplay').innerHTML = `There is ${appleCounter} fragments on map`; 
             if (appleCounter <= 0) {
                 document.getElementById('scoreDisplay').innerHTML = `Collect the Relic before tornado takes it from you!`; 
-                    new Relic(-2000,100,200,150);
+                    new Relic(-2000,20,200,150);
             }
         }
       
