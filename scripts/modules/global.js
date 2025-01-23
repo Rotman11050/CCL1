@@ -14,6 +14,10 @@ global.pixelToMeter = 100;
 global.wasCalled = false;
 global.leftMoveTrigger;
 global.rightMoveTrigger;
+global.startButton = document.getElementById('start');
+global.background = document.getElementById('background');
+global.helthDisplay = document.getElementById('healthDisplay');
+global.startScreen = document.getElementById('startScreen');
 
 global.getCanvasBounds = function () {
     let bounds =  {

@@ -69,8 +69,8 @@ function setupGame() {
 
 
 
-    //  new Enemy(450, 280, 100, 70)
-    //  new Enemy(700, 300, 80,80)
+     new Enemy(450, 280, 100, 70)
+     new Enemy(700, 300, 80,80)
 
 
     new Floor(0, 400, 9000, 40);
@@ -83,7 +83,16 @@ function setupGame() {
 }
 
 setupGame();
-requestAnimationFrame(gameLoop);
+    requestAnimationFrame(gameLoop);
+global.startButton.addEventListener("click", function(){
+    // global.canvas.style.display = 'block';
+    // global.background.style.display = 'block';
+    // global.helthDisplay.style.display = 'block';
+    // global.startScreen.style.display = 'none';
+    
+
+});
+
 
 
 
