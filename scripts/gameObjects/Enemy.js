@@ -98,8 +98,9 @@ class Enemy extends BaseGameObject {
 
     constructor(x, y, width, height, name) {
         super (x, y, width, height, name);
-        let images = ["./images/Tornado.jpg", "./images/wildTornado.jpg"];
-        this.loadImages(images);
+        // let images = ["./images/Tornado.jpg", "./images/wildTornado.jpg"];
+        // this.loadImages(images);
+        this.loadImagesFromSpritesheet("./images/spritesheet.png",4,1);
     }
 }
 
