@@ -13,7 +13,7 @@ class Apple extends BaseGameObject{
         if (collidingObject.name == "Skeleton") {
             this.active = false;
             appleCounter--;
-            document.getElementById('scoreDisplay').innerHTML = `There is ${appleCounter} fragments on map`; 
+            document.getElementById('scoreDisplay').innerHTML = `There is ${appleCounter} coins on map`; 
             if (appleCounter <= 0) {
                 document.getElementById('scoreDisplay').innerHTML = `Collect the Relic before tornado takes it from you!`; 
                     new Relic(-2000,20,200,150);

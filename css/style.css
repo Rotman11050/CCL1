@@ -8,7 +8,6 @@
     position: absolute;
     left: 0;
     top: 0;
-    /* display: none; */
 }
 
 #background {
@@ -19,19 +18,4 @@
     height: 500px;
     background-image: url("../images/BackgroundPS.png");
     background-size: cover;
-    /* display: none; */
 }
-
-#startScreen{
-    background-color: rgb(114, 68, 68);
-    position: absolute;
-    width: 1500px; 
-    height: 500px;
-    left: 0;
-    top: 0;
-    display: none; /*Delete it to see a start screen*/
-}
-
-/* #healthDisplay{
-    display: none;
-} */
