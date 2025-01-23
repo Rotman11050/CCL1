@@ -69,13 +69,12 @@ function setupGame() {
 
 
 
-    //  new Enemy(1000,500,80,80)
-    //  new Enemy(450, 280, 100, 70)
-    //  new Enemy(700, 300, 80,80)
+     new Enemy(450, 280, 100, 70)
+     new Enemy(700, 300, 80,80)
 
 
     new Floor(0, 400, 9000, 40);
-    global.playerObject = new Skeleton(300, 200, 64, 64);
+    global.playerObject = new Skeleton(200, 200, 200, 100);
     
 
 

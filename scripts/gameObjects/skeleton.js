@@ -10,13 +10,16 @@ class Skeleton extends BaseGameObject {
 
     getBoxBounds = function () {
         let bounds = {
-            left: this.x + 18,
-            right: this.x + this.width - 22,
+            left: this.x + 100,
+            right: this.x + this.width - 85,
             top: this.y + 14,
-            bottom: this.y + this.height - 3
+            bottom: this.y + this.height - 30
         }
+        
         return bounds;
     }
+    
+
 
     update = function() {
         this.x += this.xVelocity * global.deltaTime;
@@ -24,6 +27,8 @@ class Skeleton extends BaseGameObject {
         if (this.xVelocity == 0) {
             global.playerObject.switchCurrentSprites(this.animationData.firstSpriteIndex, this.animationData.firstSpriteIndex);
         }
+        // global.ctx.rect(this.x, this.y, this.width, this.height);
+        // global.ctx.stroke();
  
     }
 
@@ -31,7 +36,7 @@ class Skeleton extends BaseGameObject {
     constructor(x, y, width, height) {
         super(x, y, width, height);
         // this.loadImages(["./images/apple.png"]);
-        this.loadImagesFromSpritesheet("./images/BODY_skeleton.png", 9, 4);
+        this.loadImagesFromSpritesheet("./images/charachterSprites.png", 6, 1);
     }
 }
 
