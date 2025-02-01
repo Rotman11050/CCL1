@@ -10,7 +10,7 @@ class Skeleton extends BaseGameObject {
 
     getBoxBounds = function () {
         let bounds = {
-            left: this.x + 100,
+            left: this.x + 85,
             right: this.x + this.width - 85,
             top: this.y + 14,
             bottom: this.y + this.height - 30
