@@ -5,12 +5,15 @@
     21:04
     Found a weird way for developing movement, have to find a way of checking the jump now.
 
+
 14/01/25
     11:00
     (Dropped my own project and started using the template)
     Had a problem with fixing the camera movement. Made camera move horizontaly.
     18:30
     Fixed margins so it doesn't move the Canvas.
+
+
 15/01/25
     To do:
     -Make dynamic boundaries for the image on Canvas (Depending on dimensions of it, use it to determin playable area)
@@ -18,12 +21,16 @@
     19;24
     Today I had changed gravity function so my character doesn't fall of the map when he jumps twice in the same place or under the block.
     After that I had added enemies, although they still don't do anything, added collectables.
+
+
 16/01/25
     14:30
     Finaly finished everything releted to camera movement.
     Added enemy damage and lives & collectables counter.
     To do(17/01):
     -Add final collectable
+
+
 17/01/25
     14:00
     Added Final collectable (Relic), I had problems with finding Right coordinates for it.
@@ -33,6 +40,8 @@
     To do(20/01):
     -Change collision settings
     -Start with Artwork and Sprite adding
+
+
 20/01/25
     18:00
     Changed image for Apple (it's a coin now) and added Reilc image.
@@ -40,6 +49,8 @@
     To do(21/01):
     -Change background(I'll try to creat it on my own too)
     -Add tornado sprites(//Optional)
+
+
 21/01/25
     19:20
     Added Background, once again, on my own!!!!
@@ -48,10 +59,13 @@
     -Add enemy Sprites
     -Add charachter Sprites
     -Add 'Win' and 'Lose' screen
+
+
 22/01/25
     18:05
     Today I've added 'Win' and 'Lose' screen and finished tornado sprites. I'm exhausted and I'll finish my charachter sprites tomorrow.
     After that I'm finished with my own first video game! :)
+
 
 23/01/25
     19:00
