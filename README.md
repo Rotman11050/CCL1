@@ -7,12 +7,10 @@ Welcome to the postapocaliptic city called Bilghrad, collect the sacred Relic wh
 ---
 
 ## 🌐 **Play the Game**
-[Click here to play the game!](https://your-github-username.github.io/repository-name)
-
----
-
+[Click here to play the game!](https://cc241023-21012.php.fhstp.cc)
 ## 📸 **Screenshots**
 
+---
 ### Main Gameplay:
 <div style="text-align: center;">
   <img src="children1.png" alt="Gameplay Screenshot" width="600">

@@ -1,6 +1,5 @@
 import { global } from "../modules/global.js";
 import { BaseGameObject } from "./baseGameObject.js";
-import { Apple } from "./collectables.js";
 
 
 class Enemy extends BaseGameObject {
