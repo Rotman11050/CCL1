@@ -6,10 +6,9 @@ import { Floor } from "../gameObjects/floor.js";
 import { Apple } from "../gameObjects/collectables.js";
 import { Enemy } from "../gameObjects/Enemy.js";
 
-let gameStarted = false;
 
 function gameLoop(totalRunningTime) { 
-    if (!gameStarted) return;
+    // console.log("gameloop")
     global.deltaTime = totalRunningTime - global.prevTotalRunningTime; // Time in milliseconds between frames
     global.deltaTime /= 1000; // Convert milliseconds to seconds for consistency in calculations
     global.prevTotalRunningTime = totalRunningTime; // Save the current state of "totalRunningTime", so at the next call of gameLoop (== next frame) to calculate deltaTime again for that next frame.
@@ -24,15 +23,15 @@ function gameLoop(totalRunningTime) {
             global.allGameObjects[i].draw();
         }
     }
-    
+
     requestAnimationFrame(gameLoop); 
 }
-export function startGame() {
-    if (!gameStarted) {
-        gameStarted = true;
-        document.getElementById(background).style.display = "block" ;
-        requestAnimationFrame(gameLoop);
-    }
+function startGame() {
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("canvas").style.display = "block"
+        document.getElementById("background").style.display = "block"
+        setupGame();
+
 }
 
 function setupGame() {
@@ -72,8 +71,7 @@ function setupGame() {
     new BlockObject(3500, 160, 100, 20);
     new BlockObject(3800, 200, 100, 20);
 
-    new Enemy(450, 280, 100, 70)
-    new Enemy(700, 300, 80,80)
+    new Enemy(700, 300, 150,150)
 
 
     new Floor(0, 400, 9000, 40);
@@ -86,14 +84,9 @@ function setupGame() {
 }
 
 
-
-setupGame();
-    requestAnimationFrame(gameLoop);
-
-
-    document.getElementById("startButton").addEventListener("click", function() {
-        document.getElementById("startScreen").style.display = "none";
-        document.getElementById("canvas").style.display = "block"
-         document.getElementById("background").style.display = "block"
-        startGame();
-        });
+document.getElementById("startButton").addEventListener("click", (e) => {
+         document.getElementById("scoreDisplay").style.display = "block"
+        document.getElementById("healthDisplay").style.display = "block"
+    startGame();
+});
+requestAnimationFrame(gameLoop); 

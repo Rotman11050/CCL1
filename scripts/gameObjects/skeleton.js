@@ -1,5 +1,6 @@
 import { BaseGameObject } from "./baseGameObject.js";
 import { global } from "../modules/global.js";
+import { Apple } from "./collectables.js";
 
 class Skeleton extends BaseGameObject {
     name = "Skeleton";
@@ -19,8 +20,6 @@ class Skeleton extends BaseGameObject {
         return bounds;
     }
     
-
-
     update = function() {
         this.x += this.xVelocity * global.deltaTime;
         this.y += this.yVelocity * global.deltaTime;

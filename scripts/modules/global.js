@@ -8,6 +8,7 @@ global.allGameObjects = [];
 global.playerObject = {};
 global.backgroundShiftX = 0;
 global.counter = -500;
+global.livesCounter = 3;
 global.backgroundMaxShiftX = -2000;
 global.gravityForce = 9.8;
 global.pixelToMeter = 100;

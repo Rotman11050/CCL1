@@ -1,5 +1,6 @@
-import { BaseGameObject } from "./baseGameObject.js";
 import { global } from "../modules/global.js";
+import { BaseGameObject } from "./baseGameObject.js";
+import { Enemy } from "./Enemy.js";
 import { Relic } from "./finalCollectable.js";
 
     
@@ -15,8 +16,12 @@ class Apple extends BaseGameObject{
             appleCounter--;
             document.getElementById('scoreDisplay').innerHTML = `There is ${appleCounter} coins on map`; 
             if (appleCounter <= 0) {
-                document.getElementById('scoreDisplay').innerHTML = `Collect the Relic before tornado takes it from you!`; 
+                document.getElementById('scoreDisplay').innerHTML = `Collect the Relic before tornado takes it from you! Watch out you have just one run to get it now!!`; 
                     new Relic(-2000,20,200,150);
+
+                    global.livesCounter = 1;
+
+                    document.getElementById('healthDisplay').innerHTML = `Health: ${global.livesCounter}`; 
             }
         }
       

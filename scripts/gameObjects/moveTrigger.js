@@ -31,7 +31,7 @@ class MoveTrigger extends BaseGameObject {
                         global.counter--;
                     }
 
-                    console.log(global.counter);
+                    // console.log(global.counter);
                     if(global.counter>= -500 && global.counter < 300000)
                     {
                         gameObject.x -= collidingObject.xVelocity * global.deltaTime;

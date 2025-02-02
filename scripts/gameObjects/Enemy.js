@@ -1,8 +1,7 @@
 import { global } from "../modules/global.js";
 import { BaseGameObject } from "./baseGameObject.js";
+import { Apple } from "./collectables.js";
 
-
-let livesCounter = 3;
 
 class Enemy extends BaseGameObject {
     xVelocity = 0;
@@ -81,20 +80,21 @@ class Enemy extends BaseGameObject {
     }
     
 
-    reactToCollision = function (collidingObject) {
+    reactToCollision = function (collidingObject) {         
+        console.log(global.livesCounter);
         if (collidingObject.name === "Skeleton") {
             collidingObject.physicsData.fallVelocity = 0;
             global.restartGame();
             if (global.wasCalled == true) {
-                livesCounter--; 
+                global.livesCounter--; 
                 global.counter = 0;
-                document.getElementById('healthDisplay').innerHTML = `Health: ${livesCounter}`; 
-                if (livesCounter <= 0) {
-                    document.getElementById('canvas').style.display = "none";
-                    document.getElementById('background').style.display = "none";
-                    document.getElementById('YouLose').style.display = "block";
-                    livesCounter = 0;
-                }
+                    document.getElementById('healthDisplay').innerHTML = `Health: ${global.livesCounter}`; 
+                    if (global.livesCounter <= 0) {
+                        document.getElementById('canvas').style.display = "none";
+                        document.getElementById('background').style.display = "none";
+                        document.getElementById('YouLose').style.display = "block";
+                        global.livesCounter = 0;
+                    }
             }
         }
     };

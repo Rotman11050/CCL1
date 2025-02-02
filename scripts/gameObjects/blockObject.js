@@ -10,7 +10,7 @@ class BlockObject extends BaseGameObject {
         if (collidingObject.name == "Skeleton") {
             collidingObject.x = collidingObject.previousX;
             collidingObject.y = collidingObject.previousY;
-            console.log("player collided")
+            // console.log("player collided")
         }
         
     }

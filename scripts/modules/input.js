@@ -9,7 +9,7 @@ function move(event) {
                 global.playerObject.switchCurrentSprites(0, 1);
             global.playerObject.xVelocity = 200;
             global.playerObject.yVelocity = 0;
-            console.log("velocity set");
+            // console.log("velocity set");
             break;
         case "a":
             if (global.playerObject.xVelocity == 0)
