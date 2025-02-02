@@ -9,24 +9,16 @@
   <link rel="icon" href="favicon.png">
 </head>
 <body>
-  <!-- further HTML elements, that should maybe be displayed above your game. E.g. Healtbar, .... -->
+  <div id="startScreen">
+    <p>Welcome to the Children of Karin Aldamawiu’s</p>
+    <button id="startButton">Start</button>
+  </div>
   <div id="healthDisplay">Health: 3</div>
   <div id="gameContainer">
-    <!-- further HTML elements, that should be behind your game. e.g. Background image, .... -->
     <div id="background"></div> 
     <img id="YouWin" style="display: none;" src = "../images/WinningScreen.png">
     <img id="YouLose" style="display: none;" src = "../images/LoseScreen.png">
-    <canvas id="canvas" src="" width="1420" height="500"></canvas> <!-- change the size attributes of your canvas according to your game -->
-    <!-- further HTML elements, that should overlay your game. e.g. Main Screen, Game Over screen, .... -->
-    <!-- <div id="gameOverScreen"></div> -->
-    <!-- <div id="mainScreen"></div> -->
+    <canvas id="canvas" src="" width="1420" height="500"></canvas>
   </div>
-  <!-- further HTML elements, that should maybe be displayed below your game. E.g. Score, .... -->
-  <div id="scoreDisplay">There is 15 coins on map, collect them all and ancient relic will appear!</div>
-
-  <script type="module" src="./scripts/modules/global.js"></script>
-  <script type="module" src="./scripts/modules/input.js"></script>
-  <script type="module" src="./scripts/modules/main.js"></script>
-  
 </body>
 </html>

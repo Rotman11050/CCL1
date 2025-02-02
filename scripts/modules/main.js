@@ -6,9 +6,10 @@ import { Floor } from "../gameObjects/floor.js";
 import { Apple } from "../gameObjects/collectables.js";
 import { Enemy } from "../gameObjects/Enemy.js";
 
-
+let gameStarted = false;
 
 function gameLoop(totalRunningTime) { 
+    if (!gameStarted) return;
     global.deltaTime = totalRunningTime - global.prevTotalRunningTime; // Time in milliseconds between frames
     global.deltaTime /= 1000; // Convert milliseconds to seconds for consistency in calculations
     global.prevTotalRunningTime = totalRunningTime; // Save the current state of "totalRunningTime", so at the next call of gameLoop (== next frame) to calculate deltaTime again for that next frame.
@@ -24,7 +25,14 @@ function gameLoop(totalRunningTime) {
         }
     }
     
-    requestAnimationFrame(gameLoop); // This keeps the gameLoop running indefinitely
+    requestAnimationFrame(gameLoop); 
+}
+export function startGame() {
+    if (!gameStarted) {
+        gameStarted = true;
+        document.getElementById(background).style.display = "block" ;
+        requestAnimationFrame(gameLoop);
+    }
 }
 
 function setupGame() {
@@ -42,7 +50,6 @@ function setupGame() {
     new Apple(2075,90,100,70)
     new Apple(2275,30,100,70)
     new Apple(2565,30,100,70)
-    //
     new Apple(2965, 90,100,70)
     new Apple(3325,90,100,70)
     new Apple(3485,10, 100,70)
@@ -56,7 +63,6 @@ function setupGame() {
     new BlockObject(1500, 180, 100, 20);
     new BlockObject(1700, 80, 100, 20);
     new BlockObject(1700, 160, 100, 20);
-    //Hazard floor
     new BlockObject(2080, 160,100,20)
     new BlockObject(2280, 100,100,20)
     new BlockObject(2580, 100,100,20)
@@ -66,11 +72,8 @@ function setupGame() {
     new BlockObject(3500, 160, 100, 20);
     new BlockObject(3800, 200, 100, 20);
 
-
-
-
-     new Enemy(450, 280, 100, 70)
-     new Enemy(700, 300, 80,80)
+    new Enemy(450, 280, 100, 70)
+    new Enemy(700, 300, 80,80)
 
 
     new Floor(0, 400, 9000, 40);
@@ -82,17 +85,15 @@ function setupGame() {
 
 }
 
+
+
 setupGame();
     requestAnimationFrame(gameLoop);
-global.startButton.addEventListener("click", function(){
-    // global.canvas.style.display = 'block';
-    // global.background.style.display = 'block';
-    // global.helthDisplay.style.display = 'block';
-    // global.startScreen.style.display = 'none';
-    
-
-});
 
 
-
-
+    document.getElementById("startButton").addEventListener("click", function() {
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("canvas").style.display = "block"
+         document.getElementById("background").style.display = "block"
+        startGame();
+        });
