@@ -1,6 +1,5 @@
 import { global } from "../modules/global.js";
 import { BaseGameObject } from "./baseGameObject.js";
-import { Enemy } from "./Enemy.js";
 import { Relic } from "./finalCollectable.js";
 
     

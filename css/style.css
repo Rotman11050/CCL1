@@ -18,7 +18,7 @@
     top: 0;
     width: 1500px; 
     height: 500px;
-    background-image: url("../images/BackgroundPS.png");
+    background-image: url("../images/backgroundps.png");
     background-size: cover;
 }
 #startScreen {

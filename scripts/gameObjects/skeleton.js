@@ -35,7 +35,7 @@ class Skeleton extends BaseGameObject {
     constructor(x, y, width, height) {
         super(x, y, width, height);
         // this.loadImages(["./images/apple.png"]);
-        this.loadImagesFromSpritesheet("./images/charachterSprites.png", 6, 1);
+        this.loadImagesFromSpritesheet("./images/charachtersprites.png", 6, 1);
     }
 }
 
